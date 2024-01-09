@@ -38,13 +38,11 @@ class _InicioState extends State<Inicio> {
     final response = await http.get(Uri.parse(apiUrl));
     
     if (response.statusCode == 200) {
-      // La solicitud fue exitosa y puedes manejar los datos aquí.
       final data = json.decode(response.body);
       setState(() {
         responseData = data;
       });
     } else {
-      // Si la solicitud no fue exitosa, lidiar con el error.
       print('Error en la solicitud: ${response.statusCode}');
     }
   }
@@ -177,7 +175,6 @@ class _InicioState extends State<Inicio> {
               ),
               Text("${responseData['reverse']}"),
               SizedBox(height: 20),
-              // Agrega más Text() según sea necesario para otros datos
             ],
           ),
         ),
